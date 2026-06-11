@@ -24,11 +24,6 @@
         devShells.default = pkgs.mkShell {
           
 
-#          关键点3: 指明在构建时需要用到哪些主机工具
-          # nativeBuildInputs = with cross.buildPackages; [
-            
-          #   # 可以在这里添加其他构建时需要的工具
-          # ];
           packages=with pkgs;[
             agent-browser
             opencode
@@ -49,11 +44,8 @@
             python314Packages.wordcloud
           ];
 env = {
-            # 这里可以设置一些环境变量，例如：
-            # CC = "${cross.buildPackages.gcc}/bin/x86_64-w64-mingw32-gcc";
-            # CXX = "${cross.buildPackages.gcc}/bin/x86_64-w64-mingw32-g++";
             AGENT_BROWSER_EXECUTABLE_PATH="${pkgs.google-chrome}/bin/google-chrome-stable"; # 设置环境变量，指向 Chrome 可执行文件的路径
-            ANYSEARCH_API_KEY="${builtins.readFile ./anysearchkey.env}";
+            ANYSEARCH_API_KEY="${ if builtins.pathExists ./anysearchkey.env then builtins.readFile ./anysearchkey.env else ""}";
           };
   shellHook = ''
     
