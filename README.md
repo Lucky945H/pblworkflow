@@ -100,8 +100,8 @@ flake.nix → nixpkgs unstable
 | 平台 | 支持级别 | 说明 |
 |------|:------:|------|
 | **NixOS** | 顶级公民 | `nix develop` 直接可用，零污染 |
-| **其他 Linux 发行版** | 一等公民 | 安装 Nix 后 `nix develop`，不污染系统包管理器 |
-| **macOS** (Intel / Apple Silicon) | 一等公民 | Nix 原生支持，flake `eachDefaultSystem` 覆盖所有 Mac 架构 |
+| **其他 Linux 发行版** | 二等公民 | 安装 Nix 后 `nix develop`，不污染系统包管理器 |
+| **macOS** (Intel / Apple Silicon) | 二等公民 | Nix 原生支持，flake `eachDefaultSystem` 覆盖所有 Mac 架构 |
 | **Windows** | WSL2 推荐 | 原生不支持，通过 WSL2 + Nix 获得完全一致的 Linux 环境 |
 
 **原理**：Nix flake 的 `eachDefaultSystem` 自动覆盖 `x86_64-linux`、`aarch64-linux`、`x86_64-darwin`、`aarch64-darwin`。所有依赖锁定在 `/nix/store/` 下，不污染系统，不依赖系统级 `pip` / `npm` / `apt`。项目内每个文件都以项目根为基准使用相对路径，不写死 `/home/xxx`。
