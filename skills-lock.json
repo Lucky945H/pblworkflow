@@ -1,0 +1,23 @@
+{
+  "version": 1,
+  "skills": {
+    "Speech Writer": {
+      "source": "jmsktm/claude-settings",
+      "sourceType": "github",
+      "skillPath": "skills/speech-writer/SKILL.md",
+      "computedHash": "ae98da2bf8eb7ee3e2fe9e29f2e5d379fae8afd9291dd2bfa842723f81e50027"
+    },
+    "designing-surveys": {
+      "source": "oldwinter/skills",
+      "sourceType": "github",
+      "skillPath": "lenny-skills/product-skills/designing-surveys/SKILL.md",
+      "computedHash": "7f4b2d99a847ea8a97fc38928453cc5368356ba1aea72fad06044c81279df2de"
+    },
+    "pptx": {
+      "source": "anthropics/skills",
+      "sourceType": "github",
+      "skillPath": "skills/pptx/SKILL.md",
+      "computedHash": "6b8b859d26f93aa059c9870d1ab76b44ab69e3d6757ce4a03cc94cb760888073"
+    }
+  }
+}

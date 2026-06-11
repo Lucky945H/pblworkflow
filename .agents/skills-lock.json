@@ -1,0 +1,11 @@
+{
+  "version": 1,
+  "skills": {
+    "docx-manipulation": {
+      "source": "claude-office-skills/skills",
+      "sourceType": "github",
+      "skillPath": "docx-manipulation/SKILL.md",
+      "computedHash": "8a6022f9be78b6565e9e8356dae50c061a1090f06982fcbbae67fddc9be98a5d"
+    }
+  }
+}
