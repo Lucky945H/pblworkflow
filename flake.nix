@@ -55,10 +55,17 @@
           ];
 env = {
             AGENT_BROWSER_EXECUTABLE_PATH="${pkgs.google-chrome}/bin/google-chrome-stable"; # 设置环境变量，指向 Chrome 可执行文件的路径
-            ANYSEARCH_API_KEY="${ if builtins.pathExists ./anysearchkey.env then builtins.readFile ./anysearchkey.env else ""}";
+#            ANYSEARCH_API_KEY="${ if builtins.pathExists ./anysearchkey.env then builtins.readFile ./anysearchkey.env else ""}";
+#            RUNCOMFY_TOKEN="${ if builtins.pathExists ./runcomfy.env then builtins.readFile ./runcomfy.env else ""}";
           };
   shellHook = ''
-    
+    if [ -f .env ]; then
+      set -a
+      source .env
+      set +a
+      echo "✅ 从 .env 加载环境变量"
+    fi 
+   
     echo "欢迎进入pbl workflow环境，输入opencode打开opencode tui吧"
     echo "关于配置API，自定义SKILL以及其他高级用法请参阅相关官方文档"
     npm install
